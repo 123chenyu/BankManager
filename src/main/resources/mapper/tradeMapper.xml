@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.cy.dao.ITradeDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <!--查询单个用户详细信息-->
+    <select id="getTradeByCard" resultType="org.cy.bean.Trade">
+        <!-- 具体的sql -->
+
+        SELECT
+        *
+        FROM
+        Trade
+        WHERE
+        card_id=#{cardId}
+
+    </select>
+
+    <select id="getTradeByTime" resultType="org.cy.bean.Trade">
+        select * from Trade where  card_id=#{cardId}
+        and trade_time BETWEEN #{startTime} AND #{endTime}
+    </select>
+
+    <insert id="insertTrade">
+        insert into Trade(card_id,trade_time,trade_sum,trade_type,trade_charge)
+        VALUES(#{trade.cardId},#{trade.tradeTime},#{trade.tradeSum},#{trade.tradeType},#{trade.tradeCharge})
+    </insert>
+    <delete id="delTrade">
+        DELETE from Trade where trade_id = #{tradeId}
+    </delete>
+
+</mapper>

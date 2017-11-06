@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.cy.dao.ICardDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <!--查询用户拥有的所有银行卡信息-->
+    <select id="findCardByUser" resultType="org.cy.bean.Card">
+        <!-- 具体的sql -->
+        SELECT
+        *
+        FROM
+        Card
+        WHERE
+        user_id=#{userId}
+    </select>
+    <insert id="insertCard">
+        insert into Card values(#{card.cardId},#{card.cardPw},#{card.userId},#{card.cardState},#{card.cardBalance},#{card.cardTime})
+
+    </insert>
+
+    <update id="updateCardPw">
+        update Card set card_pw = #{password} where user_id = #{card.userId}
+    </update>
+
+    <update id="addBalance">
+        update Card set card_balance=card_balance+#{sum} where user_id=#{card.userId}
+    </update>
+
+    <update id="reduceBalance">
+        update Card set card_balance=card_balance-#{sum} where user_id=#{card.userId}
+    </update>
+
+    <update id="updateState">
+        update Card set card_state = #{card.cardState} where card_id = #{card.cardId}
+    </update>
+
+    <delete id="delCard">
+        DELETE  from Card where card_id = #{cardId}
+
+    </delete>
+</mapper>

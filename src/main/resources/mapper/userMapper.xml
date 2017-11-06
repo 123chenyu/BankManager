@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.cy.dao.IUserDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <!--查询单个用户详细信息-->
+    <select id="findByUser" resultType="org.cy.bean.User">
+        <!-- 具体的sql -->
+
+        SELECT
+        *
+        FROM
+        User
+        WHERE
+        user_name=#{userName}
+        and user_pw=#{userPw}
+    </select>
+    <!--修改密码-->
+    <update id="updatePw" >
+        update User set user_pw = #{password} where user_name = #{user.userName}
+
+    </update>
+    <update id="updateUser">
+        update User set user_name= #{user.userName},user_pw=#{user.userPw},
+        user_xm=#{user.userXm},user_sr=#{user.userSr},user_sfz=#{user.userSfz},
+        user_sjh=#{user.userSjh},user_zz=#{user.userZz},user_yx=#{user.userYx}
+        where user_id=#{user.userId}
+
+    </update>
+    <insert id="insertUser">
+        insert into User(user_name,user_pw,user_xm,user_sr,user_sfz,user_sjh,user_zz,user_yx)
+        VALUES (#{user.userName},#{user.userPw},#{user.userXm},#{user.userSr},#{user.userSfz},
+        #{user.userSjh},#{user.userZz},#{user.userYx})
+    </insert>
+
+</mapper>
