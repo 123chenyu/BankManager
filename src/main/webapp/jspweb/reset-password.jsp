@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Reus_cy
-  Date: 2017/11/6
-  Time: 12:53
+  Date: 2017/11/18
+  Time: 13:47
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -69,7 +69,7 @@
             <ul class="nav pull-right">
 
             </ul>
-            <a class="brand" href="/BankManager/jspweb/index.jsp"><span class="first">Your</span> <span class="second">Company</span></a>
+            <a class="brand" href="/BankManager/jspweb/index.html"><span class="first">Your</span> <span class="second">Company</span></a>
         </div>
     </div>
 </div>
@@ -78,24 +78,19 @@
 <div class="container-fluid">
 
     <div class="row-fluid">
-        <div class="dialog span4">
+        <div class="span4 offset4 dialog">
             <div class="block">
-                <div class="block-heading">用户登陆</div>
+                <div class="block-heading">重新设置你的密码</div>
                 <div class="block-body">
                     <form>
-                        <label>用户名</label>
-                        <input type="text" class="span12">
-                        <label>密码</label>
-                        <input type="password" class="span12">
-                        <a href="/BankManager/jspweb/index.jsp" class="btn btn-primary pull-right">登入</a>
-                        <label class="remember-me"><input type="checkbox">记住我</label>
+                        <label>你的邮箱地址</label>
+                        <input type="text" class="span12"></input>
+                        <a href="/BankManager/jspweb/index.jsp" class="btn btn-primary pull-right">发送</a>
                         <div class="clearfix"></div>
                     </form>
                 </div>
             </div>
-            <p class="pull-right" style=""><a href="#" target="blank">Theme by Portnine</a></p>
-
-            <p><a href="/BankManager/jspweb/reset-password.jsp">忘记密码？</a></p>
+            <a href="/BankManager/jspweb/sign-in.jsp">登入你的账户</a>
         </div>
     </div>
 
@@ -109,7 +104,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/BankManager/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/BankManagerlib/bootstrap/js/bootstrap.js"></script>
 
 
 
@@ -121,6 +116,8 @@
 
 </div>
 </div>
+
+
 
 </body>
 </html>
