@@ -12,8 +12,8 @@
     <!--spring包扫描-->
     <context:component-scan base-package="org.cy" />
     <!--开启springmvc注解支持-->
-    <mvc:annotation-driven/>
 
+    <context:annotation-config />
     <!-- 定义跳转的文件的前后缀 ，视图模式配置-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!-- 自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->

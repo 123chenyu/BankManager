@@ -82,12 +82,13 @@
             <div class="block">
                 <div class="block-heading">用户登陆</div>
                 <div class="block-body">
-                    <form>
+                    <form action="/BankManager/user/login" method="post">
                         <label>用户名</label>
-                        <input type="text" class="span12">
+                        <input type="text" class="span12" name="username">
                         <label>密码</label>
-                        <input type="password" class="span12">
-                        <a href="/BankManager/jspweb/index.jsp" class="btn btn-primary pull-right">登入</a>
+                        <input type="password" class="span12" name="password">
+                        <input type="submit" value="登入">
+                        <!--<a href="/BankManager/jspweb/index.jsp" class="btn btn-primary pull-right">登入</a>-->
                         <label class="remember-me"><input type="checkbox">记住我</label>
                         <div class="clearfix"></div>
                     </form>

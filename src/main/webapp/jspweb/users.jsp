@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -140,74 +141,32 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                        <th>卡号</th>
+                        <th>银行卡状态</th>
+                        <th>银行卡余额</th>
+                        <th>开卡时间</th>
                         <th style="width: 26px;"></th>
                     </tr>
                     </thead>
                     <tbody>
+                    <c:forEach var="listCard" items="${listCard}" >
+
+
                     <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Tompson</td>
-                        <td>the_mark7</td>
+                        <td>${listCard.cardId}</td>
+                        <td>${listCard.cardState}</td>
+                        <td>${listCard.cardBalance}</td>
+                        <td>${listCard.cardTime}</td>
                         <td>
                             <a href="/BankManager/jspweb/user.jsp"><i class="icon-pencil"></i></a>
                             <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Ashley</td>
-                        <td>Jacobs</td>
-                        <td>ash11927</td>
-                        <td>
-                            <a href="/BankManager/jspweb/user.jsp"><i class="icon-pencil"></i></a>
-                            <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Audrey</td>
-                        <td>Ann</td>
-                        <td>audann84</td>
-                        <td>
-                            <a href="/BankManager/jspweb/user.jsp"><i class="icon-pencil"></i></a>
-                            <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>John</td>
-                        <td>Robinson</td>
-                        <td>jr5527</td>
-                        <td>
-                            <a href="/BankManager/jspweb/user.jsp"><i class="icon-pencil"></i></a>
-                            <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Aaron</td>
-                        <td>Butler</td>
-                        <td>aaron_butler</td>
-                        <td>
-                            <a href="/BankManager/jspweb/user.jsp"><i class="icon-pencil"></i></a>
-                            <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Chris</td>
-                        <td>Albert</td>
-                        <td>cab79</td>
-                        <td>
-                            <a href="/BankManager/jspweb/user.jsp"><i class="icon-pencil"></i></a>
-                            <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-                        </td>
-                    </tr>
+
+                    </c:forEach>
+
+
+
                     </tbody>
                 </table>
             </div>

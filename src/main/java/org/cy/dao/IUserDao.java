@@ -36,5 +36,5 @@ public interface IUserDao {
      * @param user
      * @return
      */
-    int insertUser(@Param("User") User user);
+    int insertUser(@Param("user") User user);
 }

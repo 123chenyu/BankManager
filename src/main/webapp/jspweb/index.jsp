@@ -96,7 +96,7 @@
                 <div class="nav-header" data-toggle="collapse" data-target="#dashboard-menu"><i class="icon-dashboard"></i>个人中心</div>
                 <ul id="dashboard-menu" class="nav nav-list collapse in">
                     <li><a href="/BankManager/jspweb/index.jsp">主页面</a></li>
-                    <li ><a href="/BankManager/jspweb/users.jsp">银行卡查询</a></li>
+                    <li ><a href="/BankManager/card/getCards">银行卡查询</a></li>
                     <li ><a href="/BankManager/jspweb/user.jsp">个人信息中心</a></li>
                     <li ><a href="/BankManager/jspweb/gallery.jsp">缴费</a></li>
                     <li ><a href="/BankManager/jspweb/calendar.jsp">Calendar</a></li>

@@ -27,11 +27,18 @@ public class UserServlet  {
     IUserService userService;
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-   public String Login(HttpSession session){
-        System.out.println("***********************************");
-       User user=userService.userLogin("admin","admin");
-       session.setAttribute("user",user);
-        return "redirect:/index.jsp";
-    }
+   public String Login(HttpSession session, HttpServletRequest request) {
 
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        System.out.println(username+","+password);
+        User user = userService.userLogin(username, password);
+        if (user != null&&user.getUserName()!=null) {
+            session.setAttribute("user", user);
+            return "redirect:/jspweb/index.jsp";
+        } else {
+            return "redirect:/jspweb/sign-in.jsp";
+        }
+
+    }
 }
